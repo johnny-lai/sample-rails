@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: rails
+    runtime: image
+    plan: free
+    image:
+      url: "ghcr.io/johnny-lai/sample-rails"
+      creds:
+        fromRegistryCreds:
+          name: johnny-lai-package-ro
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
